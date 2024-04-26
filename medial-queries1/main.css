@@ -1,3 +1,72 @@
 body {
   background: blanchedalmond;
 }
+
+/* Base styles for .container, .a, .b, .c */
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid; 
+}
+
+.a, .b, .c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(4, 20, 28);
+  color: aliceblue;
+  border: 3px solid black; /* Adjusted border color and width */
+  margin: 10px;
+}
+
+.a {
+  min-height: 80px;
+  min-width: 10px;
+}
+
+.b {
+  min-height: 250px;
+}
+
+.c {
+  min-height: 80px;
+  min-width: 10px;
+}
+
+/* Desktop styles */
+@media (min-width: 600px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .a {
+    width: 100%;
+    height: 15vh;
+  }
+
+  .b {
+    flex-grow: 2;
+    height: 78vh;
+  }
+
+  .c {
+    flex-grow: 0.7;
+    height: auto; /* Adjust height as needed */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .container {
+    flex-flow: column nowrap;
+    height: 98vh;
+  }
+
+  .a, .c {
+    height: 15vh;
+  }
+
+  .b {
+    height: 70vh;
+  }
+}

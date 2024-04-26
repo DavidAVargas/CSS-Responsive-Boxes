@@ -1,3 +1,66 @@
 body {
   background: peachpuff;
 }
+* {
+  box-sizing: border-box;
+}
+
+/* Base styles for all elements */
+.a, .b, .c, .d, .e, .f, .g, .h {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(43, 35, 35);
+  color: aliceblue;
+  border: 3px solid black;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+/* Desktop styles */
+@media (min-width: 600px) {
+  .container {
+    border: 2px solid rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: 98vh;
+  }
+
+  .a {
+    width: 100%;
+  }
+
+  .b, .c, .d, .e, .f, .g {
+    width: 30%;
+    flex-grow: 1;
+  }
+
+  .h {
+    flex-grow: 1;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid;
+    height: 98vh;
+  }
+
+  .a {
+    height: 30%;
+  }
+
+  .b, .c, .d, .e, .f, .g {
+    flex-grow: 3;
+    width: 30%;
+    height: 15vh;
+  }
+
+  .h {
+    height: 100%;
+  }
+}
